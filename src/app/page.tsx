@@ -1,20 +1,24 @@
-import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50/50 flex items-center justify-center">
+    <main className="min-h-screen flex items-center justify-center">
       {/* Background pattern */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:6rem_4rem]" />
+      <div
+        className="absolute inset-0 -z-10 h-full w-full  
+      
+      "
+      />
 
       <section className="w-full px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8 flex flex-col items-center space-y-10 text-center">
         {/* Hero content */}
         <header className="space-y-6">
-          <h1 className="text-5xl font-bold tracking-tight sm:text-7xl bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold tracking-tight sm:text-7xl bg-gradient-to-r from-gray-500 via-gray-200  to-gray-500 bg-clip-text text-transparent">
             AI Agent Assistant
           </h1>
-          <p className="max-w-[600px] text-lg text-gray-600 md:text-xl/relaxed xl:text-2xl/relaxed">
+          <p className="max-w-[600px] text-lg from-gray-500 via-gray-200  to-gray-500 bg-clip-text md:text-xl/relaxed xl:text-2xl/relaxed">
             Meet your new AI chat companion that goes beyond conversation - it
             can actually get things done!
             <br />
@@ -60,7 +64,7 @@ export default function LandingPage() {
             { title: "Smart", description: "Powered by Your Favourite LLM's" },
           ].map(({ title, description }) => (
             <div key={title} className="text-center">
-              <div className="text-2xl font-semibold text-gray-900">
+              <div className="text-2xl font-semibold text-gray-200">
                 {title}
               </div>
               <div className="text-sm text-gray-600 mt-1">{description}</div>
@@ -69,5 +73,5 @@ export default function LandingPage() {
         </div>
       </section>
     </main>
-  );
+  )
 }

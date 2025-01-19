@@ -1,14 +1,8 @@
+import ConvexClientProvider from "@/provider/ConvexClientProvider"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs"
-import ConvexClientProvider from "@/provider/ConvexClientProvider"
+import { NavigationProvider } from "@/provider/NavigationProvider"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,18 +25,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ConvexClientProvider>
-      <html lang="en">
-        <body>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          {children}
-        </body>
-      </html>
-    </ConvexClientProvider>
+    <NavigationProvider>
+      <ConvexClientProvider>
+        <html lang="en" >
+          <body className="bg-gradient-to-br from-slate-900 to-slate-950 text-white">{children}</body>
+        </html>
+      </ConvexClientProvider>
+    </NavigationProvider>
   )
 }
